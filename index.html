@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f5ec" />
+  <title>Fieldnotes — Plant Evidence Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Fieldnotes home">
+        <span class="brand-mark">f.</span><span>fieldnotes</span>
+      </a>
+      <div class="workspace-label">RESEARCH WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#explorer"><span class="nav-icon">⌕</span> Evidence explorer</a>
+        <a class="nav-link" href="#how-it-works"><span class="nav-icon">◈</span> Method &amp; sources</a>
+      </nav>
+      <div class="side-note">
+        <div class="note-icon">✳</div>
+        <strong>Knowledge with context</strong>
+        <p>Traditional knowledge deserves provenance, respect, and careful interpretation.</p>
+        <a href="#principles">Our principles <span>↗</span></a>
+      </div>
+      <div class="sidebar-footer"><span class="online-dot"></span> Prototype workspace <span class="version">v0.1</span></div>
+    </aside>
+
+    <main class="main-content" id="explorer">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-sep">/</span><strong>Evidence explorer</strong></div>
+        <div class="top-actions"><span class="pilot-badge"><i></i> HACKATHON PROTOTYPE</span><button class="avatar" aria-label="User profile">A</button></div>
+      </header>
+
+      <section class="intro">
+        <div class="eyebrow"><span></span> ETHNOPHARMACOLOGY · EVIDENCE MAPPING</div>
+        <h1>Explore plant knowledge.<br><em>Follow the evidence.</em></h1>
+        <p class="intro-copy">A research companion for tracing medicinal plant mentions to their sources, study types, and open questions.</p>
+      </section>
+
+      <section class="search-panel" aria-label="Search plant records">
+        <div class="search-wrap"><span class="search-icon">⌕</span><input id="search" type="search" placeholder="Search a plant, compound, or reported use…" autocomplete="off" /><kbd>⌘ K</kbd></div>
+        <div class="filters-row">
+          <div class="filter-group"><span class="filter-label">FILTER BY</span>
+            <label class="select-wrap"><span>Plant</span><select id="plant-filter" aria-label="Filter by plant"><option value="all">All plants</option></select><b>⌄</b></label>
+            <label class="select-wrap"><span>Evidence</span><select id="evidence-filter" aria-label="Filter by evidence type"><option value="all">All evidence</option><option value="ethnobotanical">Ethnobotanical report</option><option value="review">Literature review</option><option value="in-vitro">In vitro study</option></select><b>⌄</b></label>
+          </div>
+          <button class="clear-button" id="clear-filters">Reset filters <span>↺</span></button>
+        </div>
+      </section>
+
+      <section class="results-heading"><div><div class="section-kicker">CURATED SAMPLE</div><h2>Evidence records <span id="result-count">0</span></h2></div><div class="sort-label">Sorted by <strong>source relevance</strong> <span>⌄</span></div></section>
+      <div class="notice"><span class="notice-symbol">i</span><p><strong>Research use only.</strong> These records summarize sources; they do not establish safety, effectiveness, or medical advice.</p><button id="dismiss-notice" aria-label="Dismiss notice">×</button></div>
+      <section id="records" class="records-grid" aria-live="polite"></section>
+      <div id="empty-state" class="empty-state" hidden><div>⌕</div><strong>No matching records</strong><span>Try another search or reset the filters.</span></div>
+
+      <section class="method-section" id="how-it-works">
+        <div class="method-copy"><div class="section-kicker">HOW TO READ THIS</div><h2>A mention is a starting point,<br><em>not a conclusion.</em></h2><p>Fieldnotes separates what a source reports from what later experiments may suggest. Every record keeps its source type visible and flags the gaps a researcher should check next.</p><a href="#principles" class="text-link">Read our research principles <span>→</span></a></div>
+        <div class="method-steps"><div class="method-step"><span class="step-number">01</span><div><strong>Find the original context</strong><p>See where a plant or use was reported and what kind of source it came from.</p></div></div><div class="method-step"><span class="step-number">02</span><div><strong>Compare evidence types</strong><p>Ethnobotanical reports and laboratory studies answer different questions.</p></div></div><div class="method-step"><span class="step-number">03</span><div><strong>Keep uncertainty visible</strong><p>Missing details and limits travel with the record, not in the fine print.</p></div></div></div>
+      </section>
+      <section class="principles" id="principles"><span class="principle-icon">✳</span><div><strong>Respect knowledge. Show your work.</strong><p>Traditional knowledge has living communities and histories behind it. We aim to preserve context and attribution, avoid treating knowledge as ownerless, and never turn exploratory findings into treatment claims.</p></div><span class="principles-tag">PROTOTYPE PRINCIPLES</span></section>
+      <footer><a class="footer-brand" href="#">fieldnotes<span>.</span></a><span>Evidence mapping prototype · Sample records for demonstration</span><a href="#explorer">Back to top ↑</a></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
